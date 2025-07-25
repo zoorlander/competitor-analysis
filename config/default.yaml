@@ -1,0 +1,43 @@
+# Конфигурация системы анализа конкурентов
+
+scraping:
+  delay: 1  # Задержка между запросами (сек)
+  timeout: 30  # Таймаут запроса (сек)
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+  max_pages: 10  # Максимальное количество страниц для анализа
+  
+social:
+  platforms:
+    - twitter
+    - linkedin
+    - facebook
+    - instagram
+  max_posts: 50  # Максимальное количество постов для анализа
+  
+analysis:
+  openai_api_key: ""  # Ваш OpenAI API ключ
+  openai_model: "gpt-4"
+  max_tokens: 2000
+  languages:
+    - ru
+    - en
+  
+market:
+  search_engines:
+    - google
+    - yandex
+  market_analysis_depth: "medium"  # low, medium, high
+  
+reports:
+  format: "html"  # html, pdf, json
+  include_charts: true
+  language: "ru"
+  
+database:
+  type: "sqlite"  # sqlite, postgresql
+  path: "data/competitors.db"  # для SQLite
+  # host: "localhost"  # для PostgreSQL
+  # port: 5432
+  # name: "competitors"
+  # user: "user"
+  # password: "password"
